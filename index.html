@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">TO DO</h1>
+            <p class="subtitle">Minimal. Productive. Beautiful.</p>
+        </div>
+
+        <!-- Main Todo Container -->
+        <div class="main-container">
+            <!-- Add Todo Form -->
+            <form class="add-form" id="addForm">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        placeholder="What needs to be done?" 
+                        class="todo-input"
+                        required
+                    >
+                    <button type="submit" class="add-btn">ADD</button>
+                </div>
+            </form>
+
+            <!-- Search and Filter Controls -->
+            <div class="controls">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search todos..." 
+                    class="search-input"
+                >
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="statistics" id="statistics" style="display: none;">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCount">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="activeCount">0</div>
+                        <div class="stat-label">Active</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="completedCount">0</div>
+                        <div class="stat-label">Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="progressPercent">0%</div>
+                        <div class="stat-label">Progress</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-list" id="todoList">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+                    <div class="empty-text">No todos yet. Add one above!</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons" id="actionButtons" style="display: none;">
+                <button class="action-btn secondary" id="toggleAllBtn">Check All</button>
+                <button class="action-btn primary" id="clearCompletedBtn" style="display: none;">Clear Completed (0)</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">Stay focused. Stay productive.</p>
+            <p class="footer-subtext">Your todos are automatically saved locally</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
